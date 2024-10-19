@@ -1,0 +1,27 @@
+<?sap.transform simple?>
+<tt:transform xmlns:tt="http://www.sap.com/transformation-templates" xmlns:ddic="http://www.sap.com/abapxml/types/dictionary" xmlns:def="http://www.sap.com/abapxml/types/defined">
+  <tt:root name="RESPUESTA" type="ddic:ZDTE_EST_CESI_REL_RESP"/>
+  <tt:template>
+    <SII:RESPUESTA xmlns:SII="http://www.sii.cl/XMLSchema">
+      <SII:RESP_HDR>
+        <SII:ESTADO tt:value-ref=".RESPUESTA.RESP_HDR.ESTADO"/>
+        <tt:cond s-check="not-initial(RESPUESTA.RESP_HDR.GLOSA)">
+          <SII:GLOSA tt:value-ref=".RESPUESTA.RESP_HDR.GLOSA"/>
+        </tt:cond>
+      </SII:RESP_HDR>
+      <tt:cond s-check="not-initial(RESPUESTA.RESP_BODY)">
+        <SII:RESP_BODY>
+          <tt:cond s-check="not-initial(RESPUESTA.RESP_BODY.RUT_TENEDOR)">
+            <RUT_TENEDOR tt:value-ref=".RESPUESTA.RESP_BODY.RUT_TENEDOR"/>
+          </tt:cond>
+          <tt:cond s-check="not-initial(RESPUESTA.RESP_BODY.FECHA_ULT_ANOT)">
+            <FECHA_ULT_ANOT tt:value-ref=".RESPUESTA.RESP_BODY.FECHA_ULT_ANOT"/>
+          </tt:cond>
+          <tt:cond s-check="not-initial(RESPUESTA.RESP_BODY.DEC_JURADA)">
+            <DEC_JURADA tt:value-ref=".RESPUESTA.RESP_BODY.DEC_JURADA"/>
+          </tt:cond>
+        </SII:RESP_BODY>
+      </tt:cond>
+    </SII:RESPUESTA>
+  </tt:template>
+</tt:transform>

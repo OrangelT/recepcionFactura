@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_DTE_FILE_PROC</CLSNAME>
+    <LANGU>S</LANGU>
+    <DESCRIPT>Clase procesar archivo para el GUI</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_RETURN</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>VELO: Tipo de tabla para BAPIret2</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MESSAGE</CMPNAME>
+     <SCONAME>I_RETURN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Parámetro de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PARSE_TABLE</CMPNAME>
+     <SCONAME>I_SEPARATOR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de texto, longitud 1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PARSE_TABLE</CMPNAME>
+     <SCONAME>I_TABNAME</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre de tabla</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_RESULT</CMPNAME>
+     <SCONAME>R_VALUE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Parámetro de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_MESSAGE_ERROR</CMPNAME>
+     <SCONAME>I_MSGID</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Identificación de los mensajes</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_MESSAGE_ERROR</CMPNAME>
+     <SCONAME>I_MSGNO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número del mensaje de sistema</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_MESSAGE_ERROR</CMPNAME>
+     <SCONAME>I_MSGTY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_MESSAGE_ERROR</CMPNAME>
+     <SCONAME>I_MSGV1</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje 01</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_MESSAGE_ERROR</CMPNAME>
+     <SCONAME>I_MSGV2</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje 02</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_MESSAGE_ERROR</CMPNAME>
+     <SCONAME>I_MSGV3</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje 03</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_MESSAGE_ERROR</CMPNAME>
+     <SCONAME>I_MSGV4</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje 04</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

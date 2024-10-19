@@ -1,0 +1,29 @@
+<?sap.transform simple?>
+<tt:transform xmlns:tt="http://www.sap.com/transformation-templates" xmlns:ddic="http://www.sap.com/abapxml/types/dictionary" xmlns:def="http://www.sap.com/abapxml/types/defined" xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <tt:root name="ENVELOPE" type="ddic:ZDTE_LIEV01"/>
+  <tt:template>
+    <S:Envelope>
+      <S:Body>
+        <ns2:listarEventosHistDocResponse xmlns:ns2="http://ws.registroreclamodte.diii.sdi.sii.cl">
+          <return>
+            <tt:cond s-check="not-initial(ENVELOPE.BODY.LISTAEVEN.RETURN.CODRESP)">
+              <codResp tt:value-ref=".ENVELOPE.BODY.LISTAEVEN.RETURN.CODRESP"/>
+            </tt:cond>
+            <descResp tt:value-ref=".ENVELOPE.BODY.LISTAEVEN.RETURN.DESCRESP"/>
+            <tt:cond s-check="not-initial(ENVELOPE.BODY.LISTAEVEN.RETURN.LISTAEVENTOSDOC)">
+              <tt:loop ref=".ENVELOPE.BODY.LISTAEVEN.RETURN.LISTAEVENTOSDOC">
+                <listaEventosDoc>
+                  <codEvento tt:value-ref="CODEVENTO"/>
+                  <descEvento tt:value-ref="DESCEVENTO"/>
+                  <rutResponsable tt:value-ref="RUTRESPONSABLE"/>
+                  <dvResponsable tt:value-ref="DVRESPONSABLE"/>
+                  <fechaEvento tt:value-ref="FECHAEVENTO"/>
+                </listaEventosDoc>
+              </tt:loop>
+            </tt:cond>
+          </return>
+        </ns2:listarEventosHistDocResponse>
+      </S:Body>
+    </S:Envelope>
+  </tt:template>
+</tt:transform>

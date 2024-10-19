@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Validaciones de Recep.Fact.Elec</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFI_0030TOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFI_0030</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFI_0030</FUNCNAME>
+     <SHORT_TEXT>Validacion de Recep.Fact.Elec</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>LT_ZCB_RECFACTPROV</PARAMETER>
+       <DBFIELD>ZTFI_0074</DBFIELD>
+       <REFERENCE>X</REFERENCE>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>ZDTE_TIPO</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZFI_TIPO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>REPID</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>REPID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>MSGID</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>MSGID</TYP>
+      </RSCHA>
+      <RSCHA>
+       <PARAMETER>MSGTY</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>MSGTY</TYP>
+      </RSCHA>
+      <RSCHA>
+       <PARAMETER>MSGNO</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>MSGNO</TYP>
+      </RSCHA>
+      <RSCHA>
+       <PARAMETER>MSGV1</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>MSGV1</TYP>
+      </RSCHA>
+      <RSCHA>
+       <PARAMETER>MSGV2</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>MSGV2</TYP>
+      </RSCHA>
+      <RSCHA>
+       <PARAMETER>MSGV3</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>MSGV3</TYP>
+      </RSCHA>
+      <RSCHA>
+       <PARAMETER>MSGV4</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>MSGV4</TYP>
+      </RSCHA>
+      <RSCHA>
+       <PARAMETER>ESTATUS</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR01</TYP>
+      </RSCHA>
+     </CHANGING>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>LT_LFB1</PARAMETER>
+       <DBSTRUCT>LFB1</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>LT_LFB1_OC</PARAMETER>
+       <DBSTRUCT>LFB1</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>LT_LFA1</PARAMETER>
+       <DBSTRUCT>LFA1</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>LT_EKKO</PARAMETER>
+       <DBSTRUCT>EKKO</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>LT_EKPO</PARAMETER>
+       <DBSTRUCT>EKPO</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>LT_ZDTE_CLDOC</PARAMETER>
+       <DBSTRUCT>ZTFI_0001B</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>LT_ZDTE_DIAS</PARAMETER>
+       <DBSTRUCT>ZTFI_0076</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>LT_ZDTE_POSFACT</PARAMETER>
+       <DBSTRUCT>ZTFI_0075</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>LT_ZDT_RECREF</PARAMETER>
+       <DBSTRUCT>ZTFI_0077</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>LT_EKBE</PARAMETER>
+       <DBSTRUCT>EKBE</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>LT_EKKN</PARAMETER>
+       <DBSTRUCT>EKKN</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>TI_ESSR</PARAMETER>
+       <DBSTRUCT>ZTY_ESS</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>TI_EKKO_ESSR</PARAMETER>
+       <DBSTRUCT>EKKO</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>TI_EKPO_ESSR</PARAMETER>
+       <DBSTRUCT>EKPO</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>ENVIA_ERROR</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>LT_ZCB_RECFACTPROV</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Cabecera Facturas Procesadas</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ZDTE_TIPO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>tipo de proveedor ZDTE</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>REPID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nombre del report ABAP</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LT_LFB1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Maestro de proveedores (sociedad)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LT_LFB1_OC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Maestro de proveedores (sociedad)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LT_LFA1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Maestro de proveedores (parte general)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LT_EKKO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Cabecera del documento de compras</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LT_EKPO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Posición del documento de compras</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LT_ZDTE_CLDOC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabla homologación DTE Clase doc.</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LT_ZDTE_DIAS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Días</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LT_ZDTE_POSFACT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Posición de facturas</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LT_ZDT_RECREF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Referencia de factura</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LT_EKBE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Historial del documento de compras</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LT_EKKN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Imputación en el documento de compras</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TI_ESSR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Datos de cabecera de hoja de entr.servicios</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TI_EKKO_ESSR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Cabecera del documento de compras</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TI_EKPO_ESSR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Posición del documento de compras</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MSGID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Identificación de los mensajes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MSGTY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Clase de mensaje</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MSGNO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Número del mensaje de sistema</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MSGV1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Variable de mensaje 01</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MSGV2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Variable de mensaje 02</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MSGV3</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Variable de mensaje 03</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MSGV4</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Variable de mensaje 04</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ESTATUS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Campo de texto, longitud 1</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ENVIA_ERROR</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Enviar Error</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

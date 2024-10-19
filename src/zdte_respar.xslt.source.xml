@@ -1,0 +1,11 @@
+<?sap.transform simple?>
+<tt:transform xmlns:tt="http://www.sap.com/transformation-templates" xmlns:ddic="http://www.sap.com/abapxml/types/dictionary" xmlns:def="http://www.sap.com/abapxml/types/defined">
+  <tt:root name="RESPUESTA" type="ddic:ZDTE_RESPAR"/>
+  <tt:template>
+    <RESPUESTA>
+      <CODRESP tt:value-ref=".RESPUESTA.CODRESP"/>
+      <DESREP tt:value-ref=".RESPUESTA.DESREP"/>
+    </RESPUESTA>
+  </tt:template>
+</tt:transform>
+

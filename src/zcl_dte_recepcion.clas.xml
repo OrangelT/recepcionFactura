@@ -1,0 +1,826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_DTE_RECEPCION</CLSNAME>
+    <LANGU>S</LANGU>
+    <DESCRIPT>Recepcion de Factura Electronica SAP</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>FACTURA AFECTA</ENTRY>
+     <LENGTH>24</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>FACTURA EXENTA</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>NOTA DE DEBITO</ENTRY>
+     <LENGTH>24</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>004</KEY>
+     <ENTRY>NOTA DE CREDITO</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>005</KEY>
+     <ENTRY>Hoja de entrada de servicio</ENTRY>
+     <LENGTH>54</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>006</KEY>
+     <ENTRY>ORDEN DE COMPRA</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>007</KEY>
+     <ENTRY>NOTA DE PEDIDO</ENTRY>
+     <LENGTH>24</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>008</KEY>
+     <ENTRY>CONTRATO</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>009</KEY>
+     <ENTRY>RESOLUCIÓN</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>010</KEY>
+     <ENTRY>PROCESO CHILECOMPRA</ENTRY>
+     <LENGTH>29</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>011</KEY>
+     <ENTRY>FICHA CHILECOMPRA</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_CUADRATURA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Chequear datos de cuadratura</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CO_FPNAME</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Formularios basados en PDF: Nombre del formulario</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CO_INPUT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sentido de la transmisión IDOC</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CO_RCVJUSTME</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de interlocutor EDI del destinatario</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CO_RCVPOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Puerta destinat.(sist.SAP, subsist.EDI)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CO_RCVPRN</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de interlocutor EDI del destinatario</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CO_RCVPRT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo de interlocutor EDI del destinatario</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CO_Z1MM_DTE_DETALLE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo de segmento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CO_Z1MM_DTE_TED</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo de segmento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE_PRCXML</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Borrar archivos XML procesados</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DIGITO_VER</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Calcula digito verificador</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISPLAY_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mostrar Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ENVIA_CORREO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Send email for error in Webservice DBNET</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_DATE_TIME_TZ</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Determinar fecha/hora desde formato juliano</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_FIRMA_TED</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Crear firma TED</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_NODO_XML_TO_TAB</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Retornar tabla de nodo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_FILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase procesar archivo para el GUI</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log standard SAP</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_XML</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>XML Document for WF- WEB Activity</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_BAL_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log aplicación: Datos de cabecera de log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_BAL_MSG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log aplicación: Datos de un mensaje</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_DTRECFACT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Detalle DTE</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_DTRECFACT2</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Detalle DTE</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_DTRECFACT2_ID</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Codigo de posicion + ID</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_DTRECFACT_ID</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Detalle DTE + ID</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_ENCABEZADO2</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Segunda parte del encabezado DTE</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_FILENAME</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre de Archivo DTE</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_IMRECFACT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Impuestos Retenidos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_RECFACT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Encabezado datos Factura Electronica</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_RECFACT2</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Segunda parte del encabezado DTE</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_RFRECFACT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Folio Referencia</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_TDRECFACT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Timbre electronico Digital</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_VARINT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variante de Interfaz MAPEO XML</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_XML</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>XML Table structure used for retreive and output XML doc</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_XML2</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>XML Table structure used for retreive and output XML doc</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_DTRECFACT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla de detalle</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_DTRECFACT2</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla de detalle codigo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_DTRECFACT2_ID</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla Codigo de posicion + ID</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_DTRECFACT_ID</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla de detalle + ID</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_FI0074FR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Registro de fecha de recepción de SII</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_FLAGDIR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador general</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_IMRECFACT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla de otros impuestos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_RFRECFACT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla de referencia</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_SSXML</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>XMl en string</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_SXML</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>XML en xstring</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IMPORT_CUADRATURA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Importar archivo de cuadratura</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IMPORT_FILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Import file from cusotmizing table or import file</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IMPORT_LC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Importar archivo de LC</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOAD_PDF_FORM</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>PDF con Formulario</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOAD_PDF_FORM_XML</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>PDF con Formulario des xml</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOAD_SAP_DATA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Carga de Idoc-Sap</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOAD_SAP_DATAH</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>carga  data en SAP dinamico</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOAD_SAP_DATA_1</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Carga de Idoc-Sap</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOAD_SAP_DATA_2</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Carga de Idoc-Sap</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MAPPINGXML_TO_STRUCH</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mapping XML to struc</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MAPPING_CUADRATURA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mapeo tabla de cuadratura</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MAPPING_LC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mapeo tabla de Libro Compra sii</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MAPPING_TO_STRUC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Map XML attributes to structure</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MAPPING_TO_STRUC_1</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Map XML attributes to structure Fijo Chile</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MAPPING_TO_STRUC_2</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Map XML attributes to structure dinamico</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOVE_FILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mueve XML a directorios</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOVE_FILEXML</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mueve archivo Xml Procesados/Error</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOV_ARCHIVOSERROR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mueve los archivos que quedan en error</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>NOMBRE_PDF</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Construir Nombre de PDF</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>NOMBRE_SFP</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SFF nombre</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PARSE_XML_TO_TAB_V2</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Parse xml doc to internal table second Version</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE_CUADRATURA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Guardar datos Cuadratura tabla ZTFI_0074FR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE_DATESII</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salvar Fecha de recepcion de SII</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE_LC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Guardar datos LC tabla ZTFI_0074FR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE_PDF_FORM</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Guardar Formulario PDF</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_X255</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo 255 tipo x (raw) para interfase stream</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VARIANTE_INTERFAZ</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variante de interfaz</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>WS_AUTDBNET</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Autenticación DBNET</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>WS_IMPORT_DOCUMENTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Import doc. for webservice</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>WS_LOAD_PDF</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cargar PDF</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>WS_LOAD_XML</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Carga XML</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>WS_MARCAR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Marcha como Traspasado a ERP</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_CUADRATURA</CMPNAME>
+     <SCONAME>P_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_FLAGDIR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador general</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DIGITO_VER</CMPNAME>
+     <SCONAME>CHECK_DIGIT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador de una posición</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DIGITO_VER</CMPNAME>
+     <SCONAME>NUMBER_PART</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de caracteres long.8</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIA_CORREO</CMPNAME>
+     <SCONAME>I_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIA_CORREO</CMPNAME>
+     <SCONAME>I_S_MSG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log aplicación: Datos de un mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_FIRMA_TED</CMPNAME>
+     <SCONAME>I_DTE_TED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Timbre electronico Digital</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_FIRMA_TED</CMPNAME>
+     <SCONAME>R_RESULT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Firma</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_NODO_XML_TO_TAB</CMPNAME>
+     <SCONAME>T_RETURN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla Error</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_NODO_XML_TO_TAB</CMPNAME>
+     <SCONAME>T_XMLTB</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla XMTB</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IMPORT_LC</CMPNAME>
+     <SCONAME>P_PERIODO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Periodo de análisis Mes</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOAD_PDF_FORM</CMPNAME>
+     <SCONAME>I_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOAD_PDF_FORM_XML</CMPNAME>
+     <SCONAME>I_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOAD_PDF_FORM_XML</CMPNAME>
+     <SCONAME>LOCAL</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador general</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOAD_SAP_DATAH</CMPNAME>
+     <SCONAME>LS_TABIX</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Índice de líneas de tabla interna</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOAD_SAP_DATAH</CMPNAME>
+     <SCONAME>PARAMETRO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Estructura de datos de mapero XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAPPINGXML_TO_STRUCH</CMPNAME>
+     <SCONAME>LS_TABIX</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Índice de líneas de tabla interna</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAPPINGXML_TO_STRUCH</CMPNAME>
+     <SCONAME>PARAMETRO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mapeo de estructura de XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAPPING_CUADRATURA</CMPNAME>
+     <SCONAME>P_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAPPING_LC</CMPNAME>
+     <SCONAME>P_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAPPING_LC</CMPNAME>
+     <SCONAME>P_PERIODO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Periodo de análisis Mes</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAPPING_TO_STRUC</CMPNAME>
+     <SCONAME>FILENAME</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre archivo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAPPING_TO_STRUC_1</CMPNAME>
+     <SCONAME>FILENAME</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre archivo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAPPING_TO_STRUC_2</CMPNAME>
+     <SCONAME>FILENAME</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre archivo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_FILE</CMPNAME>
+     <SCONAME>E_TAB</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador de una posición</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_FILE</CMPNAME>
+     <SCONAME>I_REGISTRO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Valores de registro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_FILE</CMPNAME>
+     <SCONAME>I_RUTEMPRESA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo carácter longitud 12</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_FILE</CMPNAME>
+     <SCONAME>TYPE_FILE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo con longitud de 3 byte</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_FILE</CMPNAME>
+     <SCONAME>ZPATH</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Char75</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_FILEXML</CMPNAME>
+     <SCONAME>FILE_D</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SAP ArchiveLink: Vías de acceso del fichero</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_FILEXML</CMPNAME>
+     <SCONAME>FILE_O</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SAP ArchiveLink: Vías de acceso del fichero</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_FILEXML</CMPNAME>
+     <SCONAME>NOMB_ARCHIVO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SAP ArchiveLink: Vías de acceso del fichero</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOV_ARCHIVOSERROR</CMPNAME>
+     <SCONAME>FILE_D</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SAP ArchiveLink: Vías de acceso del fichero</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOV_ARCHIVOSERROR</CMPNAME>
+     <SCONAME>FILE_O</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SAP ArchiveLink: Vías de acceso del fichero</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOV_ARCHIVOSERROR</CMPNAME>
+     <SCONAME>NOMB_ARCHIVO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SAP ArchiveLink: Vías de acceso del fichero</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>NOMBRE_PDF</CMPNAME>
+     <SCONAME>NAME</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>NOMBRE_SFP</CMPNAME>
+     <SCONAME>I_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>NOMBRE_SFP</CMPNAME>
+     <SCONAME>NOMBRE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre de un objeto formulario</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_CUADRATURA</CMPNAME>
+     <SCONAME>P_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_DATESII</CMPNAME>
+     <SCONAME>CODE_RETURN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Código retorno de sentencias ABAP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_DATESII</CMPNAME>
+     <SCONAME>I_BUKRS01</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_DATESII</CMPNAME>
+     <SCONAME>I_REGISTRO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Proxy Structure (generated)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_LC</CMPNAME>
+     <SCONAME>P_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_PDF_FORM</CMPNAME>
+     <SCONAME>I_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VARIANTE_INTERFAZ</CMPNAME>
+     <SCONAME>I_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_AUTDBNET</CMPNAME>
+     <SCONAME>NOM_WS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo con longitud de 3 byte</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_AUTDBNET</CMPNAME>
+     <SCONAME>PASSWORD</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>suscriptor DTE signature pdf</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_AUTDBNET</CMPNAME>
+     <SCONAME>USUARIO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>suscriptor DTE signature pdf</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_IMPORT_DOCUMENTS</CMPNAME>
+     <SCONAME>P_CREASOL</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador general</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_IMPORT_DOCUMENTS</CMPNAME>
+     <SCONAME>S_FECHA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Fecha actual del servidor aplicación</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_LOAD_PDF</CMPNAME>
+     <SCONAME>I_REGISTRO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Proxy Structure (generated)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_LOAD_PDF</CMPNAME>
+     <SCONAME>I_RUTEMPRESA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Rut de empresa</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_LOAD_PDF</CMPNAME>
+     <SCONAME>PDF</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>PDF</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_LOAD_XML</CMPNAME>
+     <SCONAME>I_REGISTRO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Proxy Structure (generated)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_LOAD_XML</CMPNAME>
+     <SCONAME>I_RUTEMPRESA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de texto, 13 posiciones</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_MARCAR</CMPNAME>
+     <SCONAME>I_MAIL</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Carácter 100</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_MARCAR</CMPNAME>
+     <SCONAME>I_REGISTRO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Proxy Structure (generated)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WS_MARCAR</CMPNAME>
+     <SCONAME>I_RUTEMPRESA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo carácter longitud 12</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

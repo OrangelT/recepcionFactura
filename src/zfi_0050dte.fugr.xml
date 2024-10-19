@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Manejo de Attachment en Doc.FI</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFI_0050DTETOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFI_0050DTE</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFI_0050DTE</FUNCNAME>
+     <SHORT_TEXT>Manejo de Attachment en documento FI</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>P_ENTRADA</PARAMETER>
+       <TYP>ZTFI_0074</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>P_RESULT</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>P_ENTRADA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Cabecera Facturas Procesadas</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>P_RESULT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Campo de sistema ABAP: Valor de retorno sentencias ABAP</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
