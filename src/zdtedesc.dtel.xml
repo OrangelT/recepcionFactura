@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZDTEDESC</ROLLNAME>
+    <DDLANGUAGE>S</DDLANGUAGE>
+    <HEADLEN>55</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>19</SCRLEN2>
+    <SCRLEN3>23</SCRLEN3>
+    <DDTEXT>Descripcion detalle DTE</DDTEXT>
+    <REPTEXT>Descripcion detalle DTE</REPTEXT>
+    <SCRTEXT_S>Dsc.DTE</SCRTEXT_S>
+    <SCRTEXT_M>Descripcion det.DTE</SCRTEXT_M>
+    <SCRTEXT_L>Descripcion detalle DTE</SCRTEXT_L>
+    <DTELMASTER>S</DTELMASTER>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000255</LENG>
+    <OUTPUTLEN>000255</OUTPUTLEN>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>
