@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZTERMPAGOCDG</ROLLNAME>
+    <DDLANGUAGE>S</DDLANGUAGE>
+    <DOMNAME>CHAR4</DOMNAME>
+    <HEADLEN>35</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>35</SCRLEN3>
+    <DDTEXT>Codigo del Termino de Pago Acordado</DDTEXT>
+    <REPTEXT>Codigo del Termino de Pago Acordado</REPTEXT>
+    <SCRTEXT_S>Trm.Pago</SCRTEXT_S>
+    <SCRTEXT_M>Term.Pago</SCRTEXT_M>
+    <SCRTEXT_L>Codigo del Termino de Pago Acordado</SCRTEXT_L>
+    <DTELMASTER>S</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

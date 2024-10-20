@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZTASAIMP</ROLLNAME>
+    <DDLANGUAGE>S</DDLANGUAGE>
+    <DOMNAME>DECV5_10</DOMNAME>
+    <HEADLEN>28</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>28</SCRLEN3>
+    <DDTEXT>Tasa de Impuesto o Retencion</DDTEXT>
+    <REPTEXT>Tasa de Impuesto o Retencion</REPTEXT>
+    <SCRTEXT_S>Tasa Imp.</SCRTEXT_S>
+    <SCRTEXT_M>Tasa Impuesto</SCRTEXT_M>
+    <SCRTEXT_L>Tasa de Impuesto o Retencion</SCRTEXT_L>
+    <DTELMASTER>S</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

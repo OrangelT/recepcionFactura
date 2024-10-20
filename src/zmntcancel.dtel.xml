@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZMNTCANCEL</ROLLNAME>
+    <DDLANGUAGE>S</DDLANGUAGE>
+    <DOMNAME>AFLE13D2O16N_TO_23D2O30N</DOMNAME>
+    <HEADLEN>41</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>40</SCRLEN3>
+    <DDTEXT>Monto cancelado al emitirtse el documento</DDTEXT>
+    <REPTEXT>Monto cancelado al emitirtse el documento</REPTEXT>
+    <SCRTEXT_S>Mnt.Canc</SCRTEXT_S>
+    <SCRTEXT_M>Monto.Cancelado</SCRTEXT_M>
+    <SCRTEXT_L>Monto cancelado al emitirtse el document</SCRTEXT_L>
+    <DTELMASTER>S</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZTERMPAGODIAS</ROLLNAME>
+    <DDLANGUAGE>S</DDLANGUAGE>
+    <DOMNAME>INT4</DOMNAME>
+    <HEADLEN>44</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>39</SCRLEN3>
+    <DDTEXT>Dias de Acuerdo al Codigo de Termino de Pago</DDTEXT>
+    <REPTEXT>Dias de Acuerdo al Codigo de Termino de Pago</REPTEXT>
+    <SCRTEXT_S>Dias</SCRTEXT_S>
+    <SCRTEXT_M>Dias</SCRTEXT_M>
+    <SCRTEXT_L>Dias de Acuerdo al Codigo de Termino de</SCRTEXT_L>
+    <DTELMASTER>S</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

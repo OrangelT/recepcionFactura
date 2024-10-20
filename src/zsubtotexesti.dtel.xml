@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZSUBTOTEXESTI</ROLLNAME>
+    <DDLANGUAGE>S</DDLANGUAGE>
+    <DOMNAME>DECV19_2</DOMNAME>
+    <HEADLEN>37</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>37</SCRLEN3>
+    <DDTEXT>Valor no Afecto o Exento del Subtotal</DDTEXT>
+    <REPTEXT>Valor no Afecto o Exento del Subtotal</REPTEXT>
+    <SCRTEXT_S>Val.No.X</SCRTEXT_S>
+    <SCRTEXT_M>Val.No Exento</SCRTEXT_M>
+    <SCRTEXT_L>Valor no Afecto o Exento del Subtotal</SCRTEXT_L>
+    <DTELMASTER>S</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

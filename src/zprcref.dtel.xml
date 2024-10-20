@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZPRCREF</ROLLNAME>
+    <DDLANGUAGE>S</DDLANGUAGE>
+    <DOMNAME>DECV19_2</DOMNAME>
+    <HEADLEN>55</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>40</SCRLEN3>
+    <DDTEXT>Precio Unitario de Referencia para Unidad de Referencia</DDTEXT>
+    <REPTEXT>Precio Unitario de Referencia para Unidad de Referencia</REPTEXT>
+    <SCRTEXT_S>P.U.UM.R</SCRTEXT_S>
+    <SCRTEXT_M>P.Unit.UM Ref.</SCRTEXT_M>
+    <SCRTEXT_L>Precio Unitario de Referencia para Unida</SCRTEXT_L>
+    <DTELMASTER>S</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>
