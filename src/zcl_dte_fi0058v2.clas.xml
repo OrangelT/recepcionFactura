@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_DTE_FI0058V2</CLSNAME>
+    <LANGU>S</LANGU>
+    <DESCRIPT>Contabilización Recep.Fact.Elec</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Parametros de Selección</ENTRY>
+     <LENGTH>46</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>100</KEY>
+     <ENTRY>Mensaje</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>101</KEY>
+     <ENTRY>Fecha</ENTRY>
+     <LENGTH>15</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>102</KEY>
+     <ENTRY>Proveedor</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>103</KEY>
+     <ENTRY>Sociedad</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>104</KEY>
+     <ENTRY>Documento</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>105</KEY>
+     <ENTRY>Estado</ENTRY>
+     <LENGTH>16</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>350</KEY>
+     <ENTRY>No tiene acceso para ejecutar el reporte, falta autorización para</ENTRY>
+     <LENGTH>130</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>500</KEY>
+     <ENTRY> no fue posible liberar para pago</ENTRY>
+     <LENGTH>66</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>501</KEY>
+     <ENTRY> liberado para pago</ENTRY>
+     <LENGTH>29</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>GL1</KEY>
+     <ENTRY>Su Documento Elect.Fue Rechazada</ENTRY>
+     <LENGTH>64</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>GL2</KEY>
+     <ENTRY>Su Documento Elect.Fue Aceptado</ENTRY>
+     <LENGTH>62</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>ADD lOG</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BLOQUEO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Bloquero de registro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCADOSGENERALES</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Buscar información general</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CNUM</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número del mensaje de sistema</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREAR_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Crear log FI</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DATA_SELECCIONAR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Seleccionar datos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DATOSDTE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Información de DTE</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DESBLOQUEO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Desbloqueo de registro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>EJECUTA_PROCESO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Ejecuta proceso de contabilizacion</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ENVIAR_RECHAZOACEP</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Enviar rechazo/aprobacion a Externo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_APROB</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>GENERAR_APROB</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_FBV1</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Generar FBV1</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Generar log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_MIRO_MIR4</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Generar cntabilizacion MIR7_Mir4</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_MIRO_MIR7</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Generar MIRO_MIR7</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_RECHAZO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>generar rechazos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GRABAR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Grabar Datos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>INILOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Inicializar Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LIBERACION_MM</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Liberacion de MM</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LIBERAROBJ</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Liberar Objeto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LLAMABAPIS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Llama Bapis</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LT_ZDTE_VALIDA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Parametrización Sociedad/usuario/Password WEBPDF.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Save Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDACIONBLOQEST</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Validacion de Bloque</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDACIONES</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Validaciones</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDAOC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Validacion de datos de OC</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>WA_RECFACTPROV</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_LOG</CMPNAME>
+     <SCONAME>U_HANDLE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log de aplicación: Programa de control de un log</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_LOG</CMPNAME>
+     <SCONAME>U_XMSG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mnesajes: contabilización de documentos preliminares</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREAR_LOG</CMPNAME>
+     <SCONAME>C_BAL_LOG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log aplicación: Datos de cabecera de log</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREAR_LOG</CMPNAME>
+     <SCONAME>C_HANDLE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log de aplicación: Programa de control de un log</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREAR_LOG</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_RECHAZOACEP</CMPNAME>
+     <SCONAME>I_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_APROB</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_APROB</CMPNAME>
+     <SCONAME>P_GLOSA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Elemento de datos para &apos;callbacks WWI&apos;</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_APROB</CMPNAME>
+     <SCONAME>P_NUMERO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_FBV1</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <SCONAME>P_MSGTY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Tipo de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <SCONAME>P_NUMERO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <SCONAME>P_VARIABLE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRO_MIR4</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRO_MIR4</CMPNAME>
+     <SCONAME>P_SERVICIO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Componente del número de versión</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRO_MIR7</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_RECHAZO</CMPNAME>
+     <SCONAME>LT_LFA1</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Maestro de proveedores (parte general)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_RECHAZO</CMPNAME>
+     <SCONAME>LT_PAVAL</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Datos adicionales de la sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_RECHAZO</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_RECHAZO</CMPNAME>
+     <SCONAME>P_GLOSA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Elemento de datos para &apos;callbacks WWI&apos;</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_RECHAZO</CMPNAME>
+     <SCONAME>P_NUMERO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIBERACION_MM</CMPNAME>
+     <SCONAME>P_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIBERACION_MM</CMPNAME>
+     <SCONAME>P_GJAHR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Ejercicio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_LOG</CMPNAME>
+     <SCONAME>U_HANDLE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log de aplicación: Programa de control de un log</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

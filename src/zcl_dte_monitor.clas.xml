@@ -1,0 +1,938 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_DTE_MONITOR</CLSNAME>
+    <LANGU>S</LANGU>
+    <DESCRIPT>clase monitor de Factura electronica</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>010</KEY>
+     <ENTRY>¿Desea aceptar el documento</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>011</KEY>
+     <ENTRY>¿Desea rechazar el documento</ENTRY>
+     <LENGTH>28</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>012</KEY>
+     <ENTRY>Glosa</ENTRY>
+     <LENGTH>15</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>013</KEY>
+     <ENTRY>Aceptación/Rechazo</ENTRY>
+     <LENGTH>28</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>050</KEY>
+     <ENTRY>¿Desea Modificar el estatus?</ENTRY>
+     <LENGTH>56</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>100</KEY>
+     <ENTRY>¿Desea visualizar la factura?</ENTRY>
+     <LENGTH>40</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>200</KEY>
+     <ENTRY>No se pudo crear el archivo de envio.</ENTRY>
+     <LENGTH>74</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>201</KEY>
+     <ENTRY>No es posible encontrar la ruta en  configuración(ZDTE_XML)</ENTRY>
+     <LENGTH>118</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>202</KEY>
+     <ENTRY>Documento Aceptado con éxito</ENTRY>
+     <LENGTH>56</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>210</KEY>
+     <ENTRY>No hay liberador seleccionado</ENTRY>
+     <LENGTH>58</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>211</KEY>
+     <ENTRY>No hay configuración asociada para esta sociedad en la tabla ZTFI_0078</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>212</KEY>
+     <ENTRY>No hay comunicación con el servicio web</ENTRY>
+     <LENGTH>78</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>213</KEY>
+     <ENTRY>Documento rechazado con éxito</ENTRY>
+     <LENGTH>58</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>214</KEY>
+     <ENTRY>No se ha escrito glosa al rechazar el documento</ENTRY>
+     <LENGTH>94</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>215</KEY>
+     <ENTRY>Status de la Factura no permitido, solo se permite estatus ‘2/9/P’ para enviar a WF</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>216</KEY>
+     <ENTRY>Documento</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>217</KEY>
+     <ENTRY> Fue ya modificado por otro usuario</ENTRY>
+     <LENGTH>70</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>220</KEY>
+     <ENTRY>Su Documento Elect. Fue Aceptado</ENTRY>
+     <LENGTH>64</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>221</KEY>
+     <ENTRY>Error al Aceptar/Rechazar Doc en SII, ver Log</ENTRY>
+     <LENGTH>90</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>222</KEY>
+     <ENTRY>Folio Esta siendo tratado por otro usuario</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>223</KEY>
+     <ENTRY>Se Proceso con exito su solicitud</ENTRY>
+     <LENGTH>66</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>224</KEY>
+     <ENTRY>Documento con Estatus A no se puede Aceptar/Rechazar/Cerrar</ENTRY>
+     <LENGTH>104</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>225</KEY>
+     <ENTRY>Solo Se Pueden ReprocesarDoc con Estatus &apos;A&apos;</ENTRY>
+     <LENGTH>88</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>226</KEY>
+     <ENTRY>Solo se pueden Procesar Registros con Proveedor(CrearProveedor/Refrescar)</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>227</KEY>
+     <ENTRY>No se indico Glosa de cierre de Doc</ENTRY>
+     <LENGTH>40</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>228</KEY>
+     <ENTRY>Documentos Cerrados con éxito</ENTRY>
+     <LENGTH>30</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>229</KEY>
+     <ENTRY>Cierre de Documentos</ENTRY>
+     <LENGTH>30</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>300</KEY>
+     <ENTRY>¿Desea guardar los cambios?</ENTRY>
+     <LENGTH>54</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>301</KEY>
+     <ENTRY>Días transcurridos</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>310</KEY>
+     <ENTRY>Tipo Proveedor DTE</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>311</KEY>
+     <ENTRY>Descripción Tipo prov. DTE</ENTRY>
+     <LENGTH>26</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>320</KEY>
+     <ENTRY>Centro</ENTRY>
+     <LENGTH>6</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>321</KEY>
+     <ENTRY>Hoja Entrada Servicio</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>322</KEY>
+     <ENTRY>Contrato</ENTRY>
+     <LENGTH>8</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>323</KEY>
+     <ENTRY>Fecha Base</ENTRY>
+     <LENGTH>10</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>324</KEY>
+     <ENTRY>Nro.DocumentoFI</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>325</KEY>
+     <ENTRY>Nº doc.FI</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>327</KEY>
+     <ENTRY>Fecha de Contabilización</ENTRY>
+     <LENGTH>48</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>328</KEY>
+     <ENTRY>Mod.Fecha de contabilización</ENTRY>
+     <LENGTH>30</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>400</KEY>
+     <ENTRY>¿Desea abrir el documento PDF relacionado?</ENTRY>
+     <LENGTH>84</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>402</KEY>
+     <ENTRY>Monitor DTE</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>403</KEY>
+     <ENTRY>Ingrese Glosa de rechazo</ENTRY>
+     <LENGTH>48</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>404</KEY>
+     <ENTRY>Ya fue replanificado, No esta en estatus &apos;3&apos; en La tabla RBKP</ENTRY>
+     <LENGTH>122</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>GL1</KEY>
+     <ENTRY>Su Documento Elect.Fue Rechazado</ENTRY>
+     <LENGTH>35</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>GL2</KEY>
+     <ENTRY>Su Documento Elect.Fue Aceptado</ENTRY>
+     <LENGTH>35</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>GL3</KEY>
+     <ENTRY>Su Documento fue Cerrado con exito</ENTRY>
+     <LENGTH>40</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ACEPTA_RECHAZA_DOC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Envio de respuesta acuse comercial DTE</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ACEPTA_RECHAZA_MER</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Envio de repsuesta Recepcion de merca DTE</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ARCHV</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Datos archivados si/no</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BLOQUEO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Bloqueo de tabla 74 para aceptar/rechazar</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUKRS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCAR_CONF</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>busca la configuración señalada para el monitor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCAR_DATOS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>busca los datos necesarios para el alv</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CIERRE_DOC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cambio de documento a cierre</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>CONSTRUCTOR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CPUDT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Fecha de Carga XML</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_ATTACHMENT_BOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Crear Attachment BOR.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DESBLOQUEO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Desbloqueo de tabla 74 para aceptar/rechazar</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DIAS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Evaluacion de periodo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ENVIAR_RECHAZOACEP</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Envia rechazo/Aceptacion</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FOLIO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de documento de referencia</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FUNCIONCIERRE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mover a &quot;C&quot; los documentos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_BOTONES</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Determina cuales son los botones a excluir del alv</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_CAMBIOS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Genera los cambios en las transacciones</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_CATALOGO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>genera el catalogo del alv monitor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_VARIANTE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variante de dispoción</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_VATINT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variante de Int.Sociedad</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>HANDLE_CLOSE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cerrar de Ventana de Dialogo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LANZAR_WF</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Lanza WF de autorización del pago</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LIBERAROBJ</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Liberar ibjeto para autenticacion</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Principal carga valores</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOD_FECHA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mod. de fecha contable</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOSTRAR_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Muestra los datos del documento en base al log estándar</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOSTRAR_LOG_PROC_MASI</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log de Procesos masivos de Monitor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>NOMBANA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre Analista de CxP</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>OBTENER_DATOS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Entrega los datos del monitor listos para ser mostrados ALV</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>OBTENER_STATUS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>devuelve los status.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PATH</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Directorio para Upload PDF</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>REPROC_IDOC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Reprocesar IDOC</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TIPD</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo DTE</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VER_DETALLE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>busca el detalle del documento y lo muestra en alv</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VER_EVENTOS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Muestra eventos de Doc.Electronico</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VER_PDF</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>ver documento PDF WEBSERVICES</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VER_PDF_ARCH</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Ver documeno PDF desde Archivo</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ACEPTA_RECHAZA_DOC</CMPNAME>
+     <SCONAME>ACEPTA_RECHAZA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador de una posición</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ACEPTA_RECHAZA_DOC</CMPNAME>
+     <SCONAME>CORRELATIVO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de texto, longitud 10</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ACEPTA_RECHAZA_DOC</CMPNAME>
+     <SCONAME>ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ACEPTA_RECHAZA_DOC</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador de una posición</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ACEPTA_RECHAZA_DOC</CMPNAME>
+     <SCONAME>GLOSA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Carácter 100</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BLOQUEO</CMPNAME>
+     <SCONAME>LT_ZCB_RECFACTPROV</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CIERRE_DOC</CMPNAME>
+     <SCONAME>ACEPTA_RECHAZA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador de una posición</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CIERRE_DOC</CMPNAME>
+     <SCONAME>CORRELATIVO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de texto, longitud 10</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CIERRE_DOC</CMPNAME>
+     <SCONAME>ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CIERRE_DOC</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador de una posición</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CIERRE_DOC</CMPNAME>
+     <SCONAME>GLOSA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Carácter 100</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>ARCHIVADO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Archivados</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>DIAS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Dias de evaluacion</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>DTETIPO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>tipo Proveedor DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>FOLIO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Folio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>LIFNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de cuenta del proveedor o acreedor</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>NOMBANA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre Analista de CxP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>TIPD</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_ATTACHMENT_BOR</CMPNAME>
+     <SCONAME>I_OBJTYP</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo de objeto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_ATTACHMENT_BOR</CMPNAME>
+     <SCONAME>I_ZTFI_0074</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DESBLOQUEO</CMPNAME>
+     <SCONAME>LT_ZCB_RECFACTPROV</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DOCUMENTO_MODIFICACION</CMPNAME>
+     <SCONAME>DOCUMENTO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de documento de referencia</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DOCUMENTO_MODIFICACION</CMPNAME>
+     <SCONAME>OBJEKT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase de objeto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DOCUMENTO_MODIFICACION</CMPNAME>
+     <SCONAME>PROVEEDOR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de cuenta del proveedor o acreedor</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DOCUMENTO_MODIFICACION</CMPNAME>
+     <SCONAME>SOCIEDAD</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DOCUMENTO_MODIFICACION</CMPNAME>
+     <SCONAME>TIPODTE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_RECHAZOACEP</CMPNAME>
+     <SCONAME>I_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_CAMBIOS</CMPNAME>
+     <SCONAME>BELNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de documento de un documento de factura</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_CAMBIOS</CMPNAME>
+     <SCONAME>BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_CAMBIOS</CMPNAME>
+     <SCONAME>GJAHR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Ejercicio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_CAMBIOS</CMPNAME>
+     <SCONAME>TCODE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Código transacción actual</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_CAMBIOS</CMPNAME>
+     <SCONAME>VISUALIZAR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador de una posición</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_VARIANTE</CMPNAME>
+     <SCONAME>I_VARIANT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variante visual.(uso externo)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_OTHER_CHDOCS</CMPNAME>
+     <SCONAME>BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_OTHER_CHDOCS</CMPNAME>
+     <SCONAME>LIFNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de cuenta del proveedor o acreedor</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_OTHER_CHDOCS</CMPNAME>
+     <SCONAME>R_VALUE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo tabla p.CDRED p.documentos modificación</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_OTHER_CHDOCS</CMPNAME>
+     <SCONAME>XBLNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de documento de referencia</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LANZAR_WF</CMPNAME>
+     <SCONAME>FACTURA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de documento de referencia</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LANZAR_WF</CMPNAME>
+     <SCONAME>FECHA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Fecha de documento en documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LANZAR_WF</CMPNAME>
+     <SCONAME>MOD</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nuevos valores de entrada</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LANZAR_WF</CMPNAME>
+     <SCONAME>PROVEEDOR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de cuenta del proveedor o acreedor</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LANZAR_WF</CMPNAME>
+     <SCONAME>REGISTRO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LANZAR_WF</CMPNAME>
+     <SCONAME>RESPONSABLE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>usuario responsable</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LANZAR_WF</CMPNAME>
+     <SCONAME>SOCIEDAD</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LANZAR_WF</CMPNAME>
+     <SCONAME>STATUS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Status</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LANZAR_WF</CMPNAME>
+     <SCONAME>TIPODTE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOSTRAR_LOG</CMPNAME>
+     <SCONAME>BELNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de un documento contable</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOSTRAR_LOG</CMPNAME>
+     <SCONAME>BLDAT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Fecha actual del servidor de aplicación</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOSTRAR_LOG</CMPNAME>
+     <SCONAME>BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOSTRAR_LOG</CMPNAME>
+     <SCONAME>EBELN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número del documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOSTRAR_LOG</CMPNAME>
+     <SCONAME>GJAHR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Ejercicio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOSTRAR_LOG</CMPNAME>
+     <SCONAME>LIFNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de cuenta del proveedor</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOSTRAR_LOG</CMPNAME>
+     <SCONAME>TIPODTE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOSTRAR_LOG</CMPNAME>
+     <SCONAME>XBLNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de documento de referencia</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>OBTENER_DATOS</CMPNAME>
+     <SCONAME>TI_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>tabla retorno salida alv monitor dte</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>OBTENER_STATUS</CMPNAME>
+     <SCONAME>TI_STATUS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla de configuración Estatus =&gt; icono</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REPROC_IDOC</CMPNAME>
+     <SCONAME>LT_SELECT_ROWS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Asignación de núm.línea a ID línea</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_DETALLE</CMPNAME>
+     <SCONAME>DOCUMENTO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de cuenta del proveedor o acreedor</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_DETALLE</CMPNAME>
+     <SCONAME>PROVEEDOR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de documento de referencia</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_DETALLE</CMPNAME>
+     <SCONAME>SOCIEDAD</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_DETALLE</CMPNAME>
+     <SCONAME>TIPODTE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_EVENTOS</CMPNAME>
+     <SCONAME>ITAB</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Folio a consultar</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_EVENTOS</CMPNAME>
+     <SCONAME>SOCIEDAD</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_PDF</CMPNAME>
+     <SCONAME>BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_PDF</CMPNAME>
+     <SCONAME>CX_STATIC_CHECK</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Exception class for cl_pdf exceptions</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_PDF</CMPNAME>
+     <SCONAME>STCD1</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de cuenta del proveedor o acreedor</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_PDF</CMPNAME>
+     <SCONAME>TIPODTE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_PDF</CMPNAME>
+     <SCONAME>XBLNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de documento de referencia</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_PDF_ARCH</CMPNAME>
+     <SCONAME>BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_PDF_ARCH</CMPNAME>
+     <SCONAME>FONDO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nuevos valores de entrada</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_PDF_ARCH</CMPNAME>
+     <SCONAME>RUT_EMISOR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de identificación fiscal 1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_PDF_ARCH</CMPNAME>
+     <SCONAME>RUT_RECEPTOR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de identificación fiscal 1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_PDF_ARCH</CMPNAME>
+     <SCONAME>TIPO_DTE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VER_PDF_ARCH</CMPNAME>
+     <SCONAME>XBLNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de documento de referencia</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

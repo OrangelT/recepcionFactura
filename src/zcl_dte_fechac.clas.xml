@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_DTE_FECHAC</CLSNAME>
+    <LANGU>S</LANGU>
+    <DESCRIPT>DTE Mod. De fecha de docto en Cierre</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>216</KEY>
+     <ENTRY>Documento</ENTRY>
+     <LENGTH>10</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>222</KEY>
+     <ENTRY>Folio Esta siendo tratado por otro usuario</ENTRY>
+     <LENGTH>84</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>404</KEY>
+     <ENTRY>Estatus del documento no Permitido</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>406</KEY>
+     <ENTRY>Sumando a la Fecha +8d No queda en Mes siguiente</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>407</KEY>
+     <ENTRY>Se creo nuevo documento</ENTRY>
+     <LENGTH>47</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>408</KEY>
+     <ENTRY>Se Modifico fecha Contabilización</ENTRY>
+     <LENGTH>66</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>409</KEY>
+     <ENTRY>Error al Mod.Fecha DocMM</ENTRY>
+     <LENGTH>48</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>410</KEY>
+     <ENTRY>Tipo Dte de documento No permitido</ENTRY>
+     <LENGTH>68</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>411</KEY>
+     <ENTRY>Folio de contado, No puede pasar a otro mes</ENTRY>
+     <LENGTH>50</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>412</KEY>
+     <ENTRY>No  tiene  Documento precontable</ENTRY>
+     <LENGTH>50</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>413</KEY>
+     <ENTRY>Mes de fecha de cierre = Mes Fecha actual Contable</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>414</KEY>
+     <ENTRY>No tiene OC , No puede procesarse</ENTRY>
+     <LENGTH>40</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>415</KEY>
+     <ENTRY>No Existe Información por listar</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>416</KEY>
+     <ENTRY>Fecha de cierre debe ser el 1er dia del mes</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>BAPI_FICREA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Crea doc.FI</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BAPI_FIMOD</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Bapi modificar documento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BAPI_MM</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Bapi Modificar/Crear Doc. MM</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BLOQUEO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Bloqueo de registro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BORRARDOCFI</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Borrar Doc.Preliminar FI</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCARDATOS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Buscar datos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONV</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Conversion de monto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CO_DIASFECHAC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Dte Dias</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DESBLOQUEO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Desbloqueo de registro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DIAS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Evaluacion de periodo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISPLAY_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mostrar log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FECHA_CIERRE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Fecha</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_LOGC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log standard SAP</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_BAL_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log aplicación: Datos de cabecera de log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_BAL_MSG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log aplicación: Datos de un mensaje</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LLENA_CABECERA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Llena tabla cabecera de bapi</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LLENA_POSICION</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Llena posiciones</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LV_DOCUMENTO_MENSAJE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de texto con longitud 200</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LV_ITEMACC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>contador</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MM_MIRA1</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Bapi Mira</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MM_MIRA2</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mira Crear</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOD_FECHA_CIERRE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mod de  fecha de contabilizacion</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MUEVE_VALOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Mueve valor a atributo instanciado</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDA_CONTADO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Valida que sea No sea de contado</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDA_DIAS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Valida dias en rango de 8 dias</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDA_DOCUMENTO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Valida documento precontabilizado</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDA_ESTAT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Valida esatus permitidos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDA_MESC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Valida Mes de fecha cierre vs Mes fecha actual contable</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDA_OC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Valida OC</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDA_TIPODOCUMENTO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Valida tipodte permitidos</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>BAPI_FICREA</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BAPI_FIMOD</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BAPI_MM</CMPNAME>
+     <SCONAME>DOC_NEW</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Crear nuevo documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BAPI_MM</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BLOQUEO</CMPNAME>
+     <SCONAME>LT_ZCB_RECFACTPROV</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BORRARDOCFI</CMPNAME>
+     <SCONAME>LT_MENSAJE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla de mensajes en transacciones</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BORRARDOCFI</CMPNAME>
+     <SCONAME>S_BELNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de un documento contable</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BORRARDOCFI</CMPNAME>
+     <SCONAME>S_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BORRARDOCFI</CMPNAME>
+     <SCONAME>S_CHECK</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Valor de retorno sentencias ABAP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BORRARDOCFI</CMPNAME>
+     <SCONAME>S_GJAHR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Ejercicio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCARDATOS</CMPNAME>
+     <SCONAME>LS_BELNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Documentos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCARDATOS</CMPNAME>
+     <SCONAME>LS_BLDAT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>fecha de documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCARDATOS</CMPNAME>
+     <SCONAME>LS_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedades</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCARDATOS</CMPNAME>
+     <SCONAME>LS_FECHABASE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>fecha base</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCARDATOS</CMPNAME>
+     <SCONAME>LS_FECHASII</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>fecha de SII</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCARDATOS</CMPNAME>
+     <SCONAME>LS_GJAHR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Año</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCARDATOS</CMPNAME>
+     <SCONAME>LS_LIFNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>proveedores</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCARDATOS</CMPNAME>
+     <SCONAME>LS_STATUS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>estatus</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>FECHA_C</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Fecha</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV</CMPNAME>
+     <SCONAME>LS_AMOUNT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Importe moneda en interfases BAPI</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV</CMPNAME>
+     <SCONAME>LS_MONTO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Importe en moneda local</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV</CMPNAME>
+     <SCONAME>LS_WAERS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clave de moneda</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DESBLOQUEO</CMPNAME>
+     <SCONAME>LT_ZCB_RECFACTPROV</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DESBLOQUEO</CMPNAME>
+     <SCONAME>TABLA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre de tabla</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LLENA_CABECERA</CMPNAME>
+     <SCONAME>LS_DOC</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Línea de cabecera</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LLENA_CABECERA</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LLENA_CABECERA</CMPNAME>
+     <SCONAME>LS_VBKPF</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabeceras de documento - Entrada preliminar de documentos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LLENA_POSICION</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LLENA_POSICION</CMPNAME>
+     <SCONAME>LS_VBKPF</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabeceras de documento - Entrada preliminar de documentos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LLENA_POSICION</CMPNAME>
+     <SCONAME>LT_ACP</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Posición acreedor</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MM_MIRA1</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MM_MIRA2</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOD_FECHA_CIERRE</CMPNAME>
+     <SCONAME>LT_MOD</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Log de salida</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_CONTADO</CMPNAME>
+     <SCONAME>LS_CHECK</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Valor de retorno sentencias ABAP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_CONTADO</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_DIAS</CMPNAME>
+     <SCONAME>CHECK</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Valor de retorno sentencias ABAP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_DIAS</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_DOCUMENTO</CMPNAME>
+     <SCONAME>LS_CHECK</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Valor de retorno sentencias ABAP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_DOCUMENTO</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_ESTAT</CMPNAME>
+     <SCONAME>LS_CHECK</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Valor de retorno sentencias ABAP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_ESTAT</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_MESC</CMPNAME>
+     <SCONAME>LS_CHECK</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Valor de retorno sentencias ABAP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_MESC</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_OC</CMPNAME>
+     <SCONAME>LS_CHECK</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Valor de retorno sentencias ABAP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_OC</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_TIPODOCUMENTO</CMPNAME>
+     <SCONAME>LS_CHECK</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Valor de retorno sentencias ABAP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_TIPODOCUMENTO</CMPNAME>
+     <SCONAME>LS_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Salida para monitor ALV DTE</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

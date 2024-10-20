@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_DTE_FI0057V2_CL</CLSNAME>
+    <LANGU>S</LANGU>
+    <DESCRIPT>Precontabilización Recep.Fact.elec</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_FECHA_A_EM</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtener fecha de aviso EM</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_FECHA_A_EM</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtiene Fecha de envioCorreo</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_FECHA_A_EM</CMPNAME>
+     <SCONAME>FECHA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Fecha</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_FECHA_A_EM</CMPNAME>
+     <SCONAME>FECHA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Fecha</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

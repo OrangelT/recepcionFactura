@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_DTE_FI0057V2</CLSNAME>
+    <LANGU>S</LANGU>
+    <DESCRIPT>Precontabilización Recep.Fact.Elec</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Parametros de Selección</ENTRY>
+     <LENGTH>46</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>100</KEY>
+     <ENTRY>Mensaje</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>101</KEY>
+     <ENTRY>Fecha</ENTRY>
+     <LENGTH>15</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>102</KEY>
+     <ENTRY>Proveedor</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>103</KEY>
+     <ENTRY>Sociedad</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>104</KEY>
+     <ENTRY>Documento</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>105</KEY>
+     <ENTRY>Estado</ENTRY>
+     <LENGTH>16</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>300</KEY>
+     <ENTRY>El acreedor no existe en esta sociedad</ENTRY>
+     <LENGTH>76</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>301</KEY>
+     <ENTRY>Factura a mayor días aceptadas por Soc.</ENTRY>
+     <LENGTH>78</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>302</KEY>
+     <ENTRY>No se entrega OC y es obligatorio</ENTRY>
+     <LENGTH>66</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>303</KEY>
+     <ENTRY>Rut de proveedor de OC no concuerda con Rut de la factura</ENTRY>
+     <LENGTH>114</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>304</KEY>
+     <ENTRY>Rut de la sociedad de la OC no concuerda con Rut receptor de la factura</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>305</KEY>
+     <ENTRY>Orden de compra sin HES/GES</ENTRY>
+     <LENGTH>54</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>306</KEY>
+     <ENTRY>Se rechaza porque No existe OC-Pedidolim</ENTRY>
+     <LENGTH>80</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>350</KEY>
+     <ENTRY>No tiene acceso para ejecutar el reporte, falta autorización para</ENTRY>
+     <LENGTH>130</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>400</KEY>
+     <ENTRY>Error al crear doc. trx F-63,</ENTRY>
+     <LENGTH>58</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>401</KEY>
+     <ENTRY>Documento creado F-63:</ENTRY>
+     <LENGTH>44</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>402</KEY>
+     <ENTRY>Error al crear doc. trx MIRA,</ENTRY>
+     <LENGTH>58</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>403</KEY>
+     <ENTRY>Documento creado MIRA:</ENTRY>
+     <LENGTH>44</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>404</KEY>
+     <ENTRY>Error al crear doc. trx MIR7,</ENTRY>
+     <LENGTH>58</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>405</KEY>
+     <ENTRY>Documento creado MIR7:</ENTRY>
+     <LENGTH>44</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>406</KEY>
+     <ENTRY>No se asignado Variante de validaciones por Soc</ENTRY>
+     <LENGTH>94</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>407</KEY>
+     <ENTRY>(Ir tabla ztfi_0078)</ENTRY>
+     <LENGTH>40</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>408</KEY>
+     <ENTRY>No se pudo generar Doc.Contable FVB1</ENTRY>
+     <LENGTH>72</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>409</KEY>
+     <ENTRY>Documento creado FBV1:</ENTRY>
+     <LENGTH>44</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>410</KEY>
+     <ENTRY>Error al crear doc. trx FBV1,</ENTRY>
+     <LENGTH>58</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>GL1</KEY>
+     <ENTRY>Su Documento Elect. Fue Rechazado</ENTRY>
+     <LENGTH>66</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>BLOQUEO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>BLoqueo de registros</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCADATOSOC</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Buscar Datos OC</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCADOSGENERALES</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Datos generales</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CNUM</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Parámetros de contador</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CURRENCY_CONV</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Conversion de monto a externo con moneda</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DATA_SELECCIONAR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Seleccion de datos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DATOSAPROBADOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Datos aprobador</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DATOSDTE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Datos DTE</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DATOSPEDLIM</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Datos de pedidos limites</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DESBLOQUEO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Desbloqueo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DETERM_APROBADOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Determinar Aprobador de Gto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>EJECUTA_PROCESO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Ejecutar  procesos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ENVIAR_RECHAZOACEP</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Enviar Rechazo a Externo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FECHA_E_AEM</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>fecha de Envio EM</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_FBV1_BAPI</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Generar Doc.Contable FI</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Generar log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_MIR7</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Generar Doc.MM MIR7</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_MIR7_COMEX</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Generar Doc.Precontable para Comex</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Generar Mira</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GENERAR_RECHAZO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Rechazo de DTE</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_FECHACIERRE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtener fecha cierre /Nueva Fecha contable</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GRABAR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Grabar valores de tabla</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_VARINT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variante de Interfaz MAPEO XML</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_T001</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedades</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>INDIVA_DEFECTO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Ind. de IVA por defecto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>INILOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Iniciar logo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LG_FECHACIERRE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Fecha Contable Nueva</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LIBERAROBJ</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Datos SII</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LLAMABAPIS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>LLamar Bapis</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LT_LFBW</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Retension</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MSGNO</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de mensaje</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SUSTITUCION</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sutitucion de datos OC</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDACION</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Validaciones de negocio</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDARPROVEEDOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Validar datos de proveedor</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_BLDAT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Fecha  de documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_BUKRS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_STATUS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>estatus</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_XBLNR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Folio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CURRENCY_CONV</CMPNAME>
+     <SCONAME>P_LV_AMOUNT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Importe moneda en interfases BAPI</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CURRENCY_CONV</CMPNAME>
+     <SCONAME>P_MNTTO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Monto Neto del DTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CURRENCY_CONV</CMPNAME>
+     <SCONAME>P_WAERS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clave de moneda</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_RECHAZOACEP</CMPNAME>
+     <SCONAME>I_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_RECHAZOACEP</CMPNAME>
+     <SCONAME>I_SALIDA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_FBV1_BAPI</CMPNAME>
+     <SCONAME>C_RECFACTPROV</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_FBV1_BAPI</CMPNAME>
+     <SCONAME>T_LFB1</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Maestro de proveedores (sociedad)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_FBV1_BAPI</CMPNAME>
+     <SCONAME>T_ZTFI_0077</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Referencia de factura</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_FBV1_BAPI</CMPNAME>
+     <SCONAME>T_ZTFI_0090</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Otros Impuestos Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_FBV1_BAPI</CMPNAME>
+     <SCONAME>T_ZTFI_0092</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Homologación determinador de cuenta a Cuenta de mayor</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_FBV1_BAPI</CMPNAME>
+     <SCONAME>T_ZTFI_0093</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Homologación de tipo de impuesto SII a código SAP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_FBV1_BAPI</CMPNAME>
+     <SCONAME>U_ESTATUS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Status</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_FBV1_BAPI</CMPNAME>
+     <SCONAME>U_TIPODTE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>tipo de proveedor ZDTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <SCONAME>XMSGID</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase de mensajes</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <SCONAME>XMSGNO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <SCONAME>XMSGTY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tipo de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <SCONAME>XMSGV1</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <SCONAME>XMSGV2</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <SCONAME>XMSGV3</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_LOG</CMPNAME>
+     <SCONAME>XMSGV4</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable de mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIR7</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIR7</CMPNAME>
+     <SCONAME>P_OC</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número del documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIR7_COMEX</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIR7_COMEX</CMPNAME>
+     <SCONAME>P_OC</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número del documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <SCONAME>LT_AFKO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Datos cabecera orden p.órdenes PCP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <SCONAME>LT_EKKN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Imputación en el documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <SCONAME>LT_EKKO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera del documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <SCONAME>LT_EKPO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Posición del documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <SCONAME>LT_PROJ</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Definición del proyecto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <SCONAME>LT_T001</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Sociedades</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <SCONAME>LT_ZDTE_CLDOC</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla homologación DTE Clase doc.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <SCONAME>LT_ZTFI_0075</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Posición de facturas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <SCONAME>S_ESTATUS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Status</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <SCONAME>S_TIPODTE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>tipo de proveedor ZDTE</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_MIRA</CMPNAME>
+     <SCONAME>TI_VBWF16</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clases de doc. relevantes p. liberación del pago</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_RECHAZO</CMPNAME>
+     <SCONAME>LT_LFA1</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Maestro de proveedores (parte general)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_RECHAZO</CMPNAME>
+     <SCONAME>LT_PAVAL</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Datos adicionales de la sociedad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_RECHAZO</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_RECHAZO</CMPNAME>
+     <SCONAME>P_GLOSA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Elemento de datos para &apos;callbacks WWI&apos;</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GENERAR_RECHAZO</CMPNAME>
+     <SCONAME>P_NUMERO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número del mensaje de sistema</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_FECHACIERRE</CMPNAME>
+     <SCONAME>FECHA_CIERRE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Campo de sistema ABAP: Fecha actual del servidor aplicación</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INDIVA_DEFECTO</CMPNAME>
+     <SCONAME>LV_CDSII</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Código del SII</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INDIVA_DEFECTO</CMPNAME>
+     <SCONAME>P_ENTRADA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cabecera Facturas Procesadas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INDIVA_DEFECTO</CMPNAME>
+     <SCONAME>P_ERROR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Número natural</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INDIVA_DEFECTO</CMPNAME>
+     <SCONAME>P_LT_TAX_DATA_TAX_CODE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador IVA</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INDIVA_DEFECTO</CMPNAME>
+     <SCONAME>T_ZTFI_0093</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Homologación de tipo de impuesto SII a código SAP</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

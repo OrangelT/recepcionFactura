@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_DTE_WSACEPTA</CLSNAME>
+    <LANGU>S</LANGU>
+    <DESCRIPT>Webservice Provider RestAcepta</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>DIGITO_VER</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Digito verificado</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FORMATO_RUT</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Digito verificador</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>NOMB_ARC_EX</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Contruccion de nombre de archivo externo</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>DIGITO_VER</CMPNAME>
+     <SCONAME>CHECK_DIGIT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador de una posición</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_FILE</CMPNAME>
+     <SCONAME>ZPATH</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Directorio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>NOMB_ARC_EX</CMPNAME>
+     <SCONAME>DOCUMENTO_PA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>XML Document in DOM Representation</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
