@@ -1,0 +1,12 @@
+<?sap.transform simple?>
+<tt:transform xmlns:tt="http://www.sap.com/transformation-templates"  xmlns:ddic="http://www.sap.com/abapxml/types/dictionary" xmlns:def="http://www.sap.com/abapxml/types/defined">
+  <tt:root name="RESPUESTA"/>
+  <tt:template>
+      <Retorno>
+        <Cod_Respuesta tt:value-ref=".RESPUESTA.CODE"/>
+        <tt:cond s-check="not-initial(RESPUESTA.MENSAJE)">
+        <Desc_Respuesta tt:value-ref=".RESPUESTA.MENSAJE"/>
+        </tt:cond>
+      </Retorno>
+  </tt:template>
+</tt:transform>

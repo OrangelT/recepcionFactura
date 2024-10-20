@@ -1,0 +1,17 @@
+<?sap.transform simple?>
+<tt:transform xmlns:tt="http://www.sap.com/transformation-templates"  xmlns:ddic="http://www.sap.com/abapxml/types/dictionary" xmlns:def="http://www.sap.com/abapxml/types/defined">
+  <tt:root name="RESPUESTA" type="ddic:ZDTE_SEMILLA_RESP"/>
+  <tt:template>
+    <SII:RESPUESTA xmlns:SII="http://www.sii.cl/XMLSchema">
+      <SII:RESP_BODY>
+        <SEMILLA tt:value-ref=".RESPUESTA.RESP_BODY.SEMILLA"/>
+      </SII:RESP_BODY>
+      <SII:RESP_HDR>
+        <ESTADO tt:value-ref=".RESPUESTA.RESP_HDR.ESTADO"/>
+        <tt:cond s-check="not-initial(RESPUESTA.RESP_HDR.GLOSA)">
+        <GLOSA tt:value-ref=".RESPUESTA.RESP_HDR.GLOSA"/>
+        </tt:cond>
+      </SII:RESP_HDR>
+    </SII:RESPUESTA>
+  </tt:template>
+</tt:transform>
